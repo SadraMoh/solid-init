@@ -1,5 +1,5 @@
-@import "components";
 @import "utility";
+@import "vars";
 
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,14 +14,13 @@
 }
 
 body {
-  background: linear-gradient(107.54deg, #F5BB62 0%, #FFF965 100%);
+  @include background-gradient;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 
 .dummy {
   background-color: red;
@@ -30,3 +29,4 @@ code {
   position: relative;
   z-index: 100;
 }
+

@@ -2,15 +2,31 @@
 
 //- layout
 
-$header-navbar-height: 56px;
-$footer-height: 56px;
+$content-height: 512px;
+$content-width: 380px;
 
-$xs: 0px;
+$header-height: 48px;
+$footer-height: 48px;
+
+$xs: 324px;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
+
+$p-xm: 4px;
+$p-sm: 8px;
+$p-md: 12px;
+$p-lg: 16px;
+$p-xlg: 24px;
+
+$m-xm: 4px;
+$m-sm: 8px;
+$m-md: 12px;
+$m-lg: 16px;
+$m-xlg: 24px;
+
 
 //- Colors
 
@@ -25,12 +41,13 @@ $control-label: #D6D6D6;
 $control-text: #808080;
 
 $card: #FFFFFF;
+$card-border-radius: 8px;
 
 $border-color: #F7F7F7;
 $border: 1px solid $border-color;
 
-$icon-color: #CDCDCD;
+$icon-color: #BBBBBB;
 
 @mixin background-gradient() {
-  @include grad(#F6BB63, #FFFA66);
+  @include grad(#F6BB63, #FFFA66, 100);
 }

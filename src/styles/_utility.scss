@@ -3,7 +3,7 @@
 // ------ { Flex Layout } ------
 
 @mixin flex(
-  $dir: r,
+  $dir: n,
   $alignContent: normal,
   $justifyContent: normal,
   $alignItems: normal,
@@ -64,6 +64,18 @@
 
 
 // ------ { Responsive } ------
+
+@mixin screen-min($min) {
+  @media (min-width: ($min)) {
+    @content;
+  }
+}
+@mixin screen-max($max) {
+  @media (max-width: ($max)) {
+    @content;
+  }
+}
+
 
 @mixin screen-xs-min {
   @media (min-width: ($xs + 1px)) {
@@ -139,11 +151,11 @@
 }
 
 @mixin transl() {
-  @include trans(0.32s);
+  @include trans(0.24s);
 }
 
 @mixin transs {
-  @include trans(0.16s);
+  @include trans(0.12s);
 }
 
 @mixin circle() {

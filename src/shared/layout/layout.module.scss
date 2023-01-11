@@ -1,19 +1,79 @@
+@import "/src/styles/utility";
+@import "/src/styles/vars";
+
 .layout {
-  
-  .header {
+  @include flex;
+  min-height: 100vh;
+  overflow: hidden;
 
-  }
+  .content {
+    margin: auto;
+    background-color: $card;
+    border-radius: $card-border-radius;
+    width: $content-width;
 
-  .main {
+    @include screen-max($content-width) {
+      width: 100vw;
+    }
 
-  }
-
-  .footer {
-
-    .nav {
+    header {
+      height: $header-height;
+      border-bottom: $border;
+      padding: $p-md;
+      @include row;
+      align-items: center;
 
     }
-    
+
+    main {
+      height: $content-height;
+      padding: $p-md;
+    }
+
+    footer {
+      height: $footer-height;
+      border-top: $border;
+      padding: $p-md;
+      @include flex;
+      align-items: center;
+
+      nav {
+        width: 100%;
+
+        ul {
+          @include row;
+          justify-content: space-between;
+          align-items: center;
+          gap: $m-sm;
+
+          li {
+            flex: 1;
+            text-align: center;
+            padding: 8px 4px;
+            @include circle;
+            color: $icon-color;
+            @include transl;
+            transition-property: background-color color;
+
+            &:hover {
+              background-color: transparentize($color: gray, $amount: .94);
+              @include transs;
+            }
+
+            &:active,
+            .active {
+              color: $primary;
+              @include trans;
+            }
+
+            a {}
+
+          }
+        }
+
+      }
+
+    }
   }
-  
+
 }
