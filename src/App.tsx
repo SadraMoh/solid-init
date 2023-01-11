@@ -19,11 +19,13 @@ const App: Component = () => {
 
       {/* <button onclick={refetch}>refetch</button> */}
 
-      <For each={recepies()?.items ?? []}>{(recipe) => (
-        <dl>
-          <dt>title</dt>
-          <dd>{recipe.title}</dd>
-        </dl>)}
+      <For each={recepies()?.items ?? []}>
+        {(recipe) => (
+          <dl>
+            <dt>title</dt>
+            <dd>{recipe.title}</dd>
+          </dl>
+        )}
       </For>
 
 

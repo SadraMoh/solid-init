@@ -1,11 +1,36 @@
+@import "./utility";
+
 //- layout
 
 $header-navbar-height: 56px;
 $footer-height: 56px;
 
-$xs: 0;
+$xs: 0px;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
+
+//- Colors
+
+$primary: #D85DF4;
+
+$red: #E81123;
+$gree: #A6F63F;
+$yellow: #FFFA66; 
+
+$control: #FAFAFA;
+$control-label: #D6D6D6;
+$control-text: #808080;
+
+$card: #FFFFFF;
+
+$border-color: #F7F7F7;
+$border: 1px solid $border-color;
+
+$icon-color: #CDCDCD;
+
+@mixin background-gradient() {
+  @include grad(#F6BB63, #FFFA66);
+}

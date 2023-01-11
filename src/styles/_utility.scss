@@ -1,6 +1,7 @@
 //- Utility
 
 // ------ { Flex Layout } ------
+
 @mixin flex(
   $dir: r,
   $alignContent: normal,
@@ -61,7 +62,77 @@
   @include colr;
 }
 
+
 // ------ { Responsive } ------
+
+@mixin screen-xs-min {
+  @media (min-width: ($xs + 1px)) {
+    @content;
+  }
+}
+@mixin screen-xs {
+  @media (max-width: $xs) {
+    @content;
+  }
+}
+
+@mixin screen-sm-min {
+  @media (min-width: ($sm + 1px)) {
+    @content;
+  }
+}
+@mixin screen-sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin screen-md-min {
+  @media (min-width: ($md + 1px)) {
+    @content;
+  }
+}
+@mixin screen-md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin screen-lg-min {
+  @media (min-width: ($lg + 1px)) {
+    @content;
+  }
+}
+@mixin screen-lg {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin screen-xl-min {
+  @media (min-width: ($xl + 1px)) {
+    @content;
+  }
+}
+@mixin screen-xl {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin screen-xxl-min {
+  @media (min-width: ($xxl + 1px)) {
+    @content;
+  }
+}
+@mixin screen-xxl {
+  @media (max-width: $xxl) {
+    @content;
+  }
+}
+
+
+// ------ { Misc } ------
 
 @mixin trans($seconds: 0.2s) {
   transition: all ease $seconds;
@@ -109,6 +180,13 @@
 @mixin grid($width: 220px) {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+}
+
+@mixin noselect {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 @mixin noscroll() {
