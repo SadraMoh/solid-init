@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  pocketbase: ^0.9.1
   sass: ^1.57.1
   solid-js: ^1.6.6
   typescript: ^4.9.4
@@ -8,6 +9,7 @@ specifiers:
   vite-plugin-solid: ^2.5.0
 
 dependencies:
+  pocketbase: 0.9.1
   solid-js: 1.6.6
 
 devDependencies:
@@ -880,6 +882,10 @@ packages:
     resolution: {integrity: sha1-O6ODNzNkbZ0+SZWUbBNlpn+wekI=, tarball: api/npm/npm-all/picomatch/-/picomatch-2.3.1.tgz}
     engines: {node: '>=8.6'}
     dev: true
+
+  /pocketbase/0.9.1:
+    resolution: {integrity: sha1-WpC8nedASo2nhiGsodyepVDzLtU=, tarball: api/npm/npm-all/pocketbase/-/pocketbase-0.9.1.tgz}
+    dev: false
 
   /postcss/8.4.20:
     resolution: {integrity: sha512-6Q04AXR1212bXr5fh03u8aAwbLxAQNGQ/Q1LNa0VfOI06ZAlhPHtQvE4OIdpj4kLThXilalPnmDSOD65DcHt+g==}
