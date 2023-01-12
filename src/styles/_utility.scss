@@ -151,11 +151,11 @@
 }
 
 @mixin transl() {
-  @include trans(0.24s);
+  @include trans(0.32s);
 }
 
 @mixin transs {
-  @include trans(0.12s);
+  @include trans(0.08s);
 }
 
 @mixin circle() {

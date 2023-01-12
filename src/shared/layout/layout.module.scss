@@ -50,10 +50,13 @@
             flex: 1;
             text-align: center;
             padding: 8px 4px;
-            @include circle;
             color: $icon-color;
+            @include circle;
             @include transl;
             transition-property: background-color color;
+            @include noselect;
+            cursor: pointer;
+
 
             &:hover {
               background-color: transparentize($color: gray, $amount: .94);
@@ -63,7 +66,8 @@
             &:active,
             .active {
               color: $primary;
-              @include trans;
+              background-color: transparentize($color: $primary, $amount: .8);
+              @include transs();
             }
 
             a {}
