@@ -1,5 +1,8 @@
-import { Component, JSX } from "solid-js";
+import { Component, createSignal, JSX } from "solid-js";
 import styles from "../layout/layout.module.scss";
+
+type Routes = "list" | "favourites" | "add";
+export const [route, setRoute] = createSignal<Routes>("list")
 
 type Props = {
   children?: JSX.Element
@@ -11,7 +14,7 @@ const Layout: Component<Props> = ({ header, children }) => {
     <div class={styles.layout}>
       <div class={styles.content}>
         <header>
-          {header ?? <h1>Recepies</h1>}
+          {header ?? <h1>Recipes</h1>}
         </header>
         <main>
           {children}
@@ -19,13 +22,13 @@ const Layout: Component<Props> = ({ header, children }) => {
         <footer>
           <nav>
             <ul>
-              <li>
+              <li onclick={() => setRoute("list")}>
                 list
               </li>
-              <li>
-                new
+              <li onclick={() => setRoute("add")}>
+                add
               </li>
-              <li>
+              <li onclick={() => setRoute("favourites")}>
                 favourites
               </li>
             </ul>

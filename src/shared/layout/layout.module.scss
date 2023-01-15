@@ -28,6 +28,8 @@
     main {
       height: $content-height;
       padding: $p-md;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     footer {

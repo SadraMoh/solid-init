@@ -6,7 +6,7 @@ $content-height: 512px;
 $content-width: 380px;
 
 $header-height: 48px;
-$footer-height: 48px;
+$footer-height: 32px;
 
 $xs: 324px;
 $sm: 576px;
@@ -15,13 +15,13 @@ $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
 
-$p-xm: 4px;
+$p-xs: 4px;
 $p-sm: 8px;
 $p-md: 12px;
 $p-lg: 16px;
 $p-xlg: 24px;
 
-$m-xm: 4px;
+$m-xs: 4px;
 $m-sm: 8px;
 $m-md: 12px;
 $m-lg: 16px;
@@ -30,6 +30,8 @@ $m-xlg: 24px;
 
 //- Colors
 
+$text: #696969;
+
 $primary: #D85DF4;
 
 $red: #E81123;
@@ -37,8 +39,8 @@ $gree: #A6F63F;
 $yellow: #FFFA66; 
 
 $control: #FAFAFA;
-$control-label: #D6D6D6;
-$control-text: #808080;
+$control-label: #858585;
+$control-text: #707070;
 
 $card: #FFFFFF;
 $card-border-radius: 12px;
@@ -47,7 +49,7 @@ $card-border-radius: 12px;
   box-shadow: 0 4px 12px 4px transparentize(#000000, .72);
 }
 
-$border-color: #F7F7F7;
+$border-color: #E8E8E8;
 $border: 1px solid $border-color;
 
 $icon-color: #BBBBBB;

@@ -1,0 +1,86 @@
+@import '/src/styles/utility';
+@import '/src/styles/vars';
+
+
+$ingredients-height: 28px;
+
+form {
+  .ingredients {
+    @include col;
+    gap: $m-md;
+  
+    .list {
+      @include col;
+      gap: $m-md;
+  
+      li {
+        @include row;
+        gap: $m-md;
+  
+        h6 {
+          flex: auto;
+          font-size: 16px;
+          font-weight: bold;
+          color: $control-label;
+          font-weight: normal;
+        }
+  
+        strong {
+          overflow: hidden;
+          border-radius: 6px;
+          border: $border;
+          background-color: $control;
+          color: $control-text;
+          font-size: 12px;
+          @include row;
+          align-items: center;
+  
+          span:first-child {
+            border-right: $border;
+          }
+  
+          span {
+            padding: 0 $p-sm;
+          }
+        }
+  
+        button {
+          background-color: $control;
+          border: $border;
+          border-radius: 6px;
+          width: $ingredients-height;
+          height: $ingredients-height;
+          cursor: pointer;
+        }
+  
+      }
+  
+    }
+  
+    .adder {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr #{$ingredients-height + $p-md};
+      width: 100%;
+  
+      * {
+        border-radius: 0;
+      }
+  
+      *:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+  
+      *:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+  
+      *+* {
+        border-left: none;
+      }
+  
+    }
+  }
+
+  
+  
+}

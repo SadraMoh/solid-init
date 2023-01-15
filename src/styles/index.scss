@@ -11,7 +11,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  min-width: 0;
+  max-width: unset;
 }
+
+@include placeholder(darken($border-color, 8%));
 
 body {
   @include background-gradient;
@@ -22,6 +26,51 @@ code {
     monospace;
 }
 
+// ----- {form} -----
+form {
+  @include col;
+  gap: $m-md;
+
+  .form-group {
+    @include col;
+  }
+
+  label {
+    margin-bottom: $m-sm;
+    color: $control-label;
+  }
+  
+  select,
+  input:not([type="check"]),
+  textarea {
+    min-height: 17px;
+    resize: vertical;
+    outline: none;
+  
+    color: $control-text;
+    border-radius: 6px;
+    border: $border;
+    background-color: $control;
+    padding: $p-xs;
+
+  }
+  
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  padding: $m-xs;
+  cursor: pointer;
+  color: $text;
+}
+
+button.primary {
+  background-color: #A6F63F;
+  color: #71BA10;
+}
+
+
 .dummy {
   background-color: red;
   height: 100px;
@@ -29,4 +78,3 @@ code {
   position: relative;
   z-index: 100;
 }
-

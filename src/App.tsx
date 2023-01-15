@@ -1,31 +1,36 @@
-import { batch, Component, createResource, createSignal, For } from 'solid-js';
-import Layout from './shared/layout/Layout';
+import { Component, createResource, Match, Show, Switch } from 'solid-js';
+import Layout, { route } from './shared/layout/Layout';
 import PocketBase from 'pocketbase';
-import { createStore, produce } from 'solid-js/store';
-import List from './pages/list';
+import List from './pages/list/list';
+import Add from './pages/add/add';
+
 
 const pb = new PocketBase('http://127.0.0.1:8090');
 // const userData = pb.collection('users').authWithPassword('root@root.com', 'rootrootroot');
 
-export const [state, setState] = createStore({
-  recepies: [] as any[],
-});
-
-export const [recepies] = createResource(() => pb.collection('recipe').getList(0, 10))
-
-setState(
-  produce((state) => state.recepies = recepies() as any)
-);
+export const [recipes] = createResource(() => pb.collection('recipe').getList(0, 10))
 
 const App: Component = () => {
 
-
-
-  // const [recepies] = createSignal(() => pb.collection('recipe').getFullList());
-
+  const all = () => recipes()?.items ?? [];
+  const favourites = () => all().filter(i => i);
+  
   return (
-    <Layout>
-      <List recepies={state.recepies} />
+    <Layout header={
+      <Show when={['list', 'favourites'].includes(route())} fallback={<h1>Recipes</h1>}>
+        <div>
+          <input type="text" />
+          <button></button>
+        </div>
+      </Show>
+    }>
+      <Show when={!recipes.loading} fallback={<>loading...</>}>
+        <Switch>
+          <Match when={route() === 'list'}><List recipes={all()} /></Match>
+          <Match when={route() === 'favourites'}><List recipes={favourites()} /></Match>
+          <Match when={route() === 'add'}><Add /></Match>
+        </Switch>
+      </Show>
     </Layout>
   );
 };
