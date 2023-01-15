@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "backend": ".\\backend\\pocketbase.exe serve --origins http://127.0.0.1:3000"
+    "backend:win": ".\\backend\\pocketbase.exe serve --origins http://127.0.0.1:3000",
+    "backend:lin" : "backend/pocketbase serve --origins http://127.0.0.1:3000"
   },
   "license": "MIT",
   "devDependencies": {

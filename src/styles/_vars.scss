@@ -41,7 +41,11 @@ $control-label: #D6D6D6;
 $control-text: #808080;
 
 $card: #FFFFFF;
-$card-border-radius: 8px;
+$card-border-radius: 12px;
+
+@mixin card-shadow {
+  box-shadow: 0 4px 12px 4px transparentize(#000000, .72);
+}
 
 $border-color: #F7F7F7;
 $border: 1px solid $border-color;
