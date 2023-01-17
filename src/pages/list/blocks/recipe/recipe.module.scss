@@ -26,15 +26,22 @@ $button-size: 64px;
 
       span {
         font-size: medium;
+        display: inline-flex;
+        align-items: flex-end;
+
+        box-icon {
+          margin-right: $m-xs;
+        }
       }
 
       span:first-child {
         color: $green;
-
+        fill: $green;
       }
 
       span:last-child {
         color: $yellow;
+        fill: $yellow;
         font-weight: bold;
       }
 
@@ -42,8 +49,26 @@ $button-size: 64px;
   }
 
   .like {
-    width: $button-size;
-    height: $button-size;
+    @include row;
+    margin: auto 0 auto auto;
+
+    button {
+      @include transl;
+
+      box-icon {
+        fill: gray;
+      }
+
+      &:hover {
+        background-color: transparentize(gray, $amount: .92);
+        @include transs;
+      }
+
+      &:active {
+        background-color: transparentize(gray, $amount: .8);
+      }
+
+    }
   }
 
 }

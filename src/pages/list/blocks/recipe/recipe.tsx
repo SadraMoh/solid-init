@@ -1,4 +1,4 @@
-import { Component } from "solid-js";
+import { Component, createSignal } from "solid-js";
 import { Recipe as RecipeModel } from "../../../../model/recipe.model";
 import styles from '../recipe/recipe.module.scss';
 
@@ -8,17 +8,21 @@ type Props = {
 
 const Recipe: Component<Props> = ({ recipe }) => {
 
+  const [liked, setLiked] = createSignal<boolean>(false);
+
   return (
     <div class={styles.recipe}>
       <div class={styles.info}>
         <h2>{recipe.title}</h2>
         <div class={styles.stats}>
-          <span><i></i>{recipe.minutes}<small>min</small></span>
-          <span><i></i>{recipe.ingredients.length}</span>
+          <span><box-icon name="time" />{recipe.minutes}<small>min</small></span>
+          <span><box-icon name="baguette" />{recipe.ingredients.length}</span>
         </div>
       </div>
       <div class={styles.like}>
-        <button></button>
+        <button onclick={[setLiked, !liked()]}>
+          <box-icon name="heart" size="md" type={liked() ? "regular" : "solid"}></box-icon>
+        </button>
       </div>
     </div>
   )

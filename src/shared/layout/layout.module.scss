@@ -30,9 +30,9 @@
 
         input {
           flex: auto;
-          
+
         }
- 
+
         button {
           width: $header-height;
         }
@@ -67,7 +67,6 @@
           li {
             flex: 1;
             text-align: center;
-            padding: 8px 4px;
             color: $icon-color;
             @include circle;
             @include transl;
@@ -76,7 +75,8 @@
             cursor: pointer;
 
 
-            &:hover, &:focus-within {
+            &:hover,
+            &:focus-within {
               background-color: transparentize($color: gray, $amount: .94);
               @include transs;
             }
@@ -88,7 +88,15 @@
               @include transs();
             }
 
-            a {}
+            button {
+              color: currentColor;
+
+              box-icon {
+                color: currentColor;
+                fill: currentColor;
+              }
+
+            }
 
           }
         }

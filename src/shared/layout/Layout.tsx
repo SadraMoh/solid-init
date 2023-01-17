@@ -10,6 +10,7 @@ type Props = {
 };
 
 const Layout: Component<Props> = ({ header, children }) => {
+
   return (
     <div class={styles.layout}>
       <div class={styles.content}>
@@ -23,13 +24,19 @@ const Layout: Component<Props> = ({ header, children }) => {
           <nav>
             <ul>
               <li>
-                <button onclick={[setRoute, "list"]} tabIndex={4}>list</button>
+                <button onclick={[setRoute, "list"]} tabIndex={4}>
+                  <box-icon name="list-ul"></box-icon>
+                </button>
               </li>
               <li>
-                <button onclick={[setRoute, "add"]} tabIndex={5}>add</button>
+                <button onclick={[setRoute, "add"]} tabIndex={5}>
+                  <box-icon name="plus-circle"></box-icon>
+                </button>
               </li>
               <li>
-                <button onclick={[setRoute, "favourites"]} tabIndex={6}>favourites</button>
+                <button onclick={[setRoute, "favourites"]} tabIndex={6}>
+                  <box-icon name="bookmark-heart"></box-icon>
+                </button>
               </li>
             </ul>
           </nav>
