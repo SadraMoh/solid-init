@@ -1,0 +1,49 @@
+@import '/src/styles/utility';
+@import '/src/styles/vars';
+
+$button-size: 64px;
+
+.recipe {
+  display: grid;
+  grid-template-columns: auto $button-size;
+  gap: $m-sm;
+  border: $border;
+  border-radius: 8px;
+  padding: $p-sm;
+
+  .info {
+    @include col;
+    gap: $m-sm;
+
+    h2 {
+      font-size: large;
+      color: $control-text;
+    }
+
+    .stats {
+      @include row;
+      gap: $m-sm;
+
+      span {
+        font-size: medium;
+      }
+
+      span:first-child {
+        color: $green;
+
+      }
+
+      span:last-child {
+        color: $yellow;
+        font-weight: bold;
+      }
+
+    }
+  }
+
+  .like {
+    width: $button-size;
+    height: $button-size;
+  }
+
+}

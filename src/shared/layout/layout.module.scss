@@ -23,6 +23,22 @@
       @include row;
       align-items: center;
 
+      form {
+        width: 100%;
+        @include row;
+        height: 100%;
+
+        input {
+          flex: auto;
+          
+        }
+ 
+        button {
+          width: $header-height;
+        }
+
+      }
+
     }
 
     main {
@@ -60,7 +76,7 @@
             cursor: pointer;
 
 
-            &:hover {
+            &:hover, &:focus-within {
               background-color: transparentize($color: gray, $amount: .94);
               @include transs;
             }

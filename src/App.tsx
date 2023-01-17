@@ -14,14 +14,14 @@ const App: Component = () => {
 
   const all = () => recipes()?.items ?? [];
   const favourites = () => all().filter(i => i);
-  
+
   return (
     <Layout header={
-      <Show when={['list', 'favourites'].includes(route())} fallback={<h1>Recipes</h1>}>
-        <div>
-          <input type="text" />
-          <button></button>
-        </div>
+      <Show when={['list', 'favourites'].includes(route())} fallback={<h1>New Recipe</h1>}>
+        <form>
+          <input type='text' placeholder='search...' tabIndex='1'/>
+          <button class='primary' tabIndex='2'></button>
+        </form>
       </Show>
     }>
       <Show when={!recipes.loading} fallback={<>loading...</>}>

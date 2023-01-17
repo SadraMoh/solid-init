@@ -7,17 +7,13 @@ type Props = {
 
 const List: Component<Props> = ({ recipes }) => {
 
-  
-  
   return (
     <>
-      <h3>LIST</h3>
       <For each={recipes}>
         {recipe => <Recipe recipe={recipe} />}
       </For>
     </>
   )
-
 }
 
 export default List;

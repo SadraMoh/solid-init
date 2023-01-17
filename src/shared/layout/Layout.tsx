@@ -22,14 +22,14 @@ const Layout: Component<Props> = ({ header, children }) => {
         <footer>
           <nav>
             <ul>
-              <li onclick={() => setRoute("list")}>
-                list
+              <li>
+                <button onclick={[setRoute, "list"]} tabIndex={4}>list</button>
               </li>
-              <li onclick={() => setRoute("add")}>
-                add
+              <li>
+                <button onclick={[setRoute, "add"]} tabIndex={5}>add</button>
               </li>
-              <li onclick={() => setRoute("favourites")}>
-                favourites
+              <li>
+                <button onclick={[setRoute, "favourites"]} tabIndex={6}>favourites</button>
               </li>
             </ul>
           </nav>
