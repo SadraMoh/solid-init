@@ -1,4 +1,6 @@
-import { Component, createSignal } from "solid-js";
+import { produce } from "solid-js/store";
+import { Component, createSignal, Setter, Show } from "solid-js";
+import { mutateRecipes } from "../../../../App";
 import { Recipe as RecipeModel } from "../../../../model/recipe.model";
 import styles from '../recipe/recipe.module.scss';
 
@@ -7,8 +9,6 @@ type Props = {
 }
 
 const Recipe: Component<Props> = ({ recipe }) => {
-
-  const [liked, setLiked] = createSignal<boolean>(false);
 
   return (
     <div class={styles.recipe}>
@@ -19,9 +19,13 @@ const Recipe: Component<Props> = ({ recipe }) => {
           <span><box-icon name="baguette" />{recipe.ingredients.length}</span>
         </div>
       </div>
-      <div class={styles.like}>
-        <button onclick={[setLiked, !liked()]}>
-          <box-icon name="heart" size="md" type={liked() ? "regular" : "solid"}></box-icon>
+      <div class={styles.like} classList={{ [styles.liked]: recipe.isLiked }}>
+        <button onclick={() => mutateRecipes(produce(i => {
+          i?.items[i.items.indexOf(recipe)].isLiked !== true
+        }))}>
+          <Show when={recipe.isLiked} fallback={<box-icon name="heart" size="md" type="regular"></box-icon>}>
+            <box-icon name="heart" size="md" type="solid"></box-icon>
+          </Show>
         </button>
       </div>
     </div>
