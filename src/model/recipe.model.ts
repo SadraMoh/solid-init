@@ -1,12 +1,12 @@
-import { Collection } from "pocketbase"
+import { RecipeIngredientRel } from "./recipe-ingredient.rel.modal"
 
-export interface Recipe extends Collection {
+export interface Recipe {
 
   title: string
   description: string
   minutes: number
   isLiked: boolean
-  
-  ingredients: string[]
+
+  ingredients: RecipeIngredientRel[]
 
 }

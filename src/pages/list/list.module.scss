@@ -1,0 +1,7 @@
+@import '/src/styles/utility';
+@import '/src/styles/vars';
+
+.list {
+  @include col;
+  gap: $m-md;
+}

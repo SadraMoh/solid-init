@@ -1,19 +1,19 @@
-import { ListResult } from "pocketbase"
-import { Component, For, Setter } from "solid-js"
-import Recipe from "./blocks/recipe/recipe"
+import { Component, For } from "solid-js";
+import Recipe from "./blocks/recipe/recipe";
 import { Recipe as RecipeModel } from "../../model/recipe.model";
 
+import style from "./list.module.scss";
+
 type Props = {
-  recipes: RecipeModel[],
-}
+  recipes: RecipeModel[];
+};
 
 const List: Component<Props> = ({ recipes }) => {
-
   return (
-    <For each={recipes}>
-      {recipe => <Recipe recipe={recipe} />}
-    </For>
-  )
-}
+    <div class={style.list}>
+      <For each={recipes}>{(recipe) => <Recipe recipe={recipe} />}</For>
+    </div>
+  );
+};
 
 export default List;

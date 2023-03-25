@@ -39,14 +39,14 @@ form {
     margin-bottom: $m-sm;
     color: $control-label;
   }
-  
+
   select,
   input:not([type="check"]),
   textarea {
     min-height: 17px;
     resize: vertical;
     outline: none;
-  
+
     color: $control-text;
     border-radius: 6px;
     border: $border;
@@ -54,7 +54,7 @@ form {
     padding: $p-xs;
 
   }
-  
+
 }
 
 button {
@@ -64,11 +64,19 @@ button {
   cursor: pointer;
   color: $text;
   background-color: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button.primary {
   background-color: #A6F63F;
   color: #71BA10;
+
+  box-icon {
+    fill: #5d990d;
+  }
+
 }
 
 
